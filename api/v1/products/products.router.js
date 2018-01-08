@@ -65,7 +65,8 @@ router.get('/:productCode', function(req, res) {
         return;
       }
       //console.log('Response :: ', res);
-      res.send(result);
+      //res.send(result);
+      res.status(201).send(JSON.stringify(result, null, "\t"));
       //console.log('Response :: ', res)
       return;
     });

@@ -56,7 +56,15 @@ const findProductByCode = function(productCode, done) {
     done(null, product);
   });
 }
-const aggregateVendortoProduct = function(result, done) {  
+const aggregateVendortoProduct = function(data, done) {
+  let product = data.product,
+      vendor = data.vendor,
+      result = {
+        name: product.name,
+        productCode: product.code,
+        vendor: vendor,   
+        price: product.price
+      } 
   return done(null, result);
 }
 
